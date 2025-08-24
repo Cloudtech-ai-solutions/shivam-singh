@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -27,20 +33,20 @@ import {
   MessageSquare,
   Heart,
   Star,
-  Zap
+  Zap,
 } from "lucide-react";
 import { useState } from "react";
 
 export default function Index() {
   const [contactForm, setContactForm] = useState({
-    name: '',
-    email: '',
-    message: '',
-    projectType: ''
+    name: "",
+    email: "",
+    message: "",
+    projectType: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,76 +55,107 @@ export default function Index() {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitMessage('Thank you for your message! I\'ll get back to you soon.');
-      setContactForm({ name: '', email: '', message: '', projectType: '' });
+      setSubmitMessage(
+        "Thank you for your message! I'll get back to you soon.",
+      );
+      setContactForm({ name: "", email: "", message: "", projectType: "" });
 
       setTimeout(() => {
-        setSubmitMessage('');
+        setSubmitMessage("");
       }, 5000);
     }, 1000);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setContactForm(prev => ({ ...prev, [name]: value }));
+    setContactForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const skills = {
-    "Cloud & DevOps": ["AWS EC2, S3", "Microsoft Azure", "Docker & CI/CD Pipelines", "Firebase"],
-    "Programming": ["Python", "MongoDB", "Linux (Basic Commands & Server Operations)"],
-    "Networking": ["Cisco Packet Tracer", "Network Configuration", "Postman (API Testing)"],
-    "File Management": ["FileZilla (FTP/SFTP Management)", "PuTTY (Remote Server Access via SSH)"]
+    "Cloud & DevOps": [
+      "AWS EC2, S3",
+      "Microsoft Azure",
+      "Docker & CI/CD Pipelines",
+      "Firebase",
+    ],
+    Programming: [
+      "Python",
+      "MongoDB",
+      "Linux (Basic Commands & Server Operations)",
+    ],
+    Networking: [
+      "Cisco Packet Tracer",
+      "Network Configuration",
+      "Postman (API Testing)",
+    ],
+    "File Management": [
+      "FileZilla (FTP/SFTP Management)",
+      "PuTTY (Remote Server Access via SSH)",
+    ],
   };
 
   const experiences = [
     {
       title: "Intern - Solitaire Infosys Pvt. Ltd.",
       duration: "6 Months",
-      description: "Gained practical experience in Networking and Cloud Computing. Worked on server management, AWS deployments, and troubleshooting network issues."
-    }
+      description:
+        "Gained practical experience in Networking and Cloud Computing. Worked on server management, AWS deployments, and troubleshooting network issues.",
+    },
   ];
 
   const projects = [
     {
       title: "Live Server Hosting",
-      description: "Set up a remote server using FileZilla for secure file transfers (FTP/SFTP) and PuTTY for SSH-based server management. Managed domain configurations, ensured secure deployment, and optimized server performance for hosting websites and applications.",
-      technologies: ["FileZilla", "PuTTY", "FTP/SFTP", "SSH", "Server Management"]
+      description:
+        "Set up a remote server using FileZilla for secure file transfers (FTP/SFTP) and PuTTY for SSH-based server management. Managed domain configurations, ensured secure deployment, and optimized server performance for hosting websites and applications.",
+      technologies: [
+        "FileZilla",
+        "PuTTY",
+        "FTP/SFTP",
+        "SSH",
+        "Server Management",
+      ],
     },
     {
       title: "Face Recognition AI System",
-      description: "Developed an AI-based face recognition system using Python, OpenCV, and TensorFlow. Implemented real-time face detection and recognition functionalities. Built the user interface using Tkinter for easy interaction and control.",
-      technologies: ["Python", "OpenCV", "TensorFlow", "Tkinter", "AI/ML"]
-    }
+      description:
+        "Developed an AI-based face recognition system using Python, OpenCV, and TensorFlow. Implemented real-time face detection and recognition functionalities. Built the user interface using Tkinter for easy interaction and control.",
+      technologies: ["Python", "OpenCV", "TensorFlow", "Tkinter", "AI/ML"],
+    },
   ];
 
   const education = [
     {
       degree: "B.Tech in Computer Science & Engineering",
       institution: "Global Group of Institutes, Amritsar",
-      duration: "2021 - 2025"
+      duration: "2021 - 2025",
     },
     {
       degree: "12th (Science)",
       institution: "Amritchand Balika Uchh Vidyalaya, Ara",
-      duration: "2019 - 2020"
+      duration: "2019 - 2020",
     },
     {
       degree: "10th",
       institution: "KPS Public School, Patna",
-      duration: "2017 - 2018"
-    }
+      duration: "2017 - 2018",
+    },
   ];
 
   const certifications = [
     "Cloud Computing and Networking – Solitaire Infosys Pvt. Ltd.",
-    "Python Programming – ThinkNext Pvt. Ltd."
+    "Python Programming – ThinkNext Pvt. Ltd.",
   ];
 
   const softSkills = [
     "Team Collaboration",
-    "Time Management", 
+    "Time Management",
     "Adaptability",
-    "Leadership Qualities"
+    "Leadership Qualities",
   ];
 
   return (
@@ -127,7 +164,9 @@ export default function Index() {
       <nav className="bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-foreground">Shivam Singh</div>
+            <div className="text-xl font-bold text-foreground">
+              Shivam Singh
+            </div>
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm" asChild>
                 <a href="#about">About</a>
@@ -171,7 +210,8 @@ export default function Index() {
                 Cloud Developer
               </p>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Transforming businesses through scalable cloud solutions and automated DevOps workflows
+                Transforming businesses through scalable cloud solutions and
+                automated DevOps workflows
               </p>
             </div>
 
@@ -202,8 +242,12 @@ export default function Index() {
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Interactive Cloud Architecture</h2>
-            <p className="text-muted-foreground">Experience cloud infrastructure in 3D - drag to explore</p>
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Interactive Cloud Architecture
+            </h2>
+            <p className="text-muted-foreground">
+              Experience cloud infrastructure in 3D - drag to explore
+            </p>
           </div>
           <CloudScene3D />
         </div>
@@ -228,7 +272,12 @@ export default function Index() {
                         Cloud Developer & DevOps Engineer
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        Passionate Cloud and DevOps Enthusiast with hands-on experience in deploying and managing applications on AWS and Azure cloud platforms. I specialize in designing and automating CI/CD pipelines for efficient software delivery using cutting-edge tools like Docker and Linux environments.
+                        Passionate Cloud and DevOps Enthusiast with hands-on
+                        experience in deploying and managing applications on AWS
+                        and Azure cloud platforms. I specialize in designing and
+                        automating CI/CD pipelines for efficient software
+                        delivery using cutting-edge tools like Docker and Linux
+                        environments.
                       </p>
                     </div>
                   </div>
@@ -241,7 +290,12 @@ export default function Index() {
                         Education & Expertise
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        B.Tech graduate in Computer Science & Engineering with deep expertise in containerization, infrastructure automation, and cloud-native deployments. Experienced in supporting production systems, troubleshooting cloud-based services, and ensuring high availability in Agile-driven environments.
+                        B.Tech graduate in Computer Science & Engineering with
+                        deep expertise in containerization, infrastructure
+                        automation, and cloud-native deployments. Experienced in
+                        supporting production systems, troubleshooting
+                        cloud-based services, and ensuring high availability in
+                        Agile-driven environments.
                       </p>
                     </div>
                   </div>
@@ -254,7 +308,11 @@ export default function Index() {
                         Mission & Vision
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        Committed to helping businesses scale efficiently through innovative cloud solutions and automation. I believe in building robust, secure, and cost-effective infrastructure that enables organizations to focus on their core business goals.
+                        Committed to helping businesses scale efficiently
+                        through innovative cloud solutions and automation. I
+                        believe in building robust, secure, and cost-effective
+                        infrastructure that enables organizations to focus on
+                        their core business goals.
                       </p>
                     </div>
                   </div>
@@ -278,36 +336,52 @@ export default function Index() {
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">AWS</span>
+                          <span className="text-white font-bold text-sm">
+                            AWS
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">AWS EC2, S3</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          AWS EC2, S3
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">AZ</span>
+                          <span className="text-white font-bold text-xs">
+                            AZ
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Azure</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Azure
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">🐳</span>
+                          <span className="text-white font-bold text-xs">
+                            🐳
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Docker & CI/CD</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Docker & CI/CD
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-800/20 p-4 border border-yellow-200 dark:border-yellow-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">FB</span>
+                          <span className="text-white font-bold text-xs">
+                            FB
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Firebase</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Firebase
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -323,27 +397,39 @@ export default function Index() {
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 border border-green-200 dark:border-green-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-blue-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">🐍</span>
+                          <span className="text-white font-bold text-xs">
+                            🐍
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Python</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Python
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 border border-green-200 dark:border-green-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">DB</span>
+                          <span className="text-white font-bold text-xs">
+                            DB
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">MongoDB</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          MongoDB
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 p-4 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 col-span-2">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-black rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">🐧</span>
+                          <span className="text-white font-bold text-xs">
+                            🐧
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Linux Commands & Server Operations</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Linux Commands & Server Operations
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -359,45 +445,65 @@ export default function Index() {
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 border border-purple-200 dark:border-purple-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">PT</span>
+                          <span className="text-white font-bold text-xs">
+                            PT
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Cisco Packet Tracer</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Cisco Packet Tracer
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 border border-purple-200 dark:border-purple-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">📡</span>
+                          <span className="text-white font-bold text-xs">
+                            📡
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Network Config</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Network Config
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-4 border border-orange-200 dark:border-orange-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">📬</span>
+                          <span className="text-white font-bold text-xs">
+                            📬
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">Postman API</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          Postman API
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-4 border border-orange-200 dark:border-orange-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-green-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">📁</span>
+                          <span className="text-white font-bold text-xs">
+                            📁
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">FileZilla FTP</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          FileZilla FTP
+                        </span>
                       </div>
                     </div>
 
                     <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 p-4 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 col-span-2">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-xs">🔐</span>
+                          <span className="text-white font-bold text-xs">
+                            🔐
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold text-foreground">PuTTY SSH Access</span>
+                        <span className="text-sm font-semibold text-foreground">
+                          PuTTY SSH Access
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -411,7 +517,9 @@ export default function Index() {
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Professional Experience</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+            Professional Experience
+          </h2>
           <div className="max-w-4xl mx-auto">
             {experiences.map((exp, index) => (
               <Card key={index} className="mb-6">
@@ -434,7 +542,9 @@ export default function Index() {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+            Featured Projects
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="h-full">
@@ -445,7 +555,9 @@ export default function Index() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1">
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="outline">
@@ -464,10 +576,15 @@ export default function Index() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-foreground mb-12">Professional Certifications</h2>
+            <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+              Professional Certifications
+            </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {certifications.map((cert, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-all duration-300 hover:scale-105"
+                >
                   <CardContent className="p-6">
                     <p className="flex items-center text-foreground">
                       <Award className="w-5 h-5 mr-3 text-yellow-600" />
@@ -485,7 +602,9 @@ export default function Index() {
       <section id="collaborate" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Let's Collaborate</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Let's Collaborate
+            </h2>
             <p className="text-xl text-muted-foreground">
               Available for freelance projects and cloud consulting
             </p>
@@ -497,7 +616,10 @@ export default function Index() {
                 <Cloud className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Cloud Migration</h3>
-              <p className="text-muted-foreground">Help businesses migrate to AWS/Azure with zero downtime and optimized costs.</p>
+              <p className="text-muted-foreground">
+                Help businesses migrate to AWS/Azure with zero downtime and
+                optimized costs.
+              </p>
             </Card>
 
             <Card className="text-center p-6">
@@ -505,7 +627,10 @@ export default function Index() {
                 <Zap className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">DevOps Automation</h3>
-              <p className="text-muted-foreground">Implement CI/CD pipelines and infrastructure automation for faster deployments.</p>
+              <p className="text-muted-foreground">
+                Implement CI/CD pipelines and infrastructure automation for
+                faster deployments.
+              </p>
             </Card>
 
             <Card className="text-center p-6">
@@ -513,14 +638,19 @@ export default function Index() {
                 <Users className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Consulting</h3>
-              <p className="text-muted-foreground">Strategic cloud architecture planning and best practices implementation.</p>
+              <p className="text-muted-foreground">
+                Strategic cloud architecture planning and best practices
+                implementation.
+              </p>
             </Card>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Client Testimonials */}
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-8">What Clients Say</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-8">
+                What Clients Say
+              </h3>
               <div className="space-y-6">
                 <Card className="p-6">
                   <div className="flex items-start space-x-4">
@@ -533,14 +663,21 @@ export default function Index() {
                       <div className="flex items-center mb-2">
                         <div className="flex space-x-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            <Star
+                              key={i}
+                              className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                            />
                           ))}
                         </div>
                       </div>
                       <p className="text-muted-foreground mb-2">
-                        "Excellent work on our cloud migration. Shivam helped us reduce our AWS costs by 40% while improving performance."
+                        "Excellent work on our cloud migration. Shivam helped us
+                        reduce our AWS costs by 40% while improving
+                        performance."
                       </p>
-                      <p className="font-semibold text-sm">- Anonymous Client</p>
+                      <p className="font-semibold text-sm">
+                        - Anonymous Client
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -556,14 +693,20 @@ export default function Index() {
                       <div className="flex items-center mb-2">
                         <div className="flex space-x-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            <Star
+                              key={i}
+                              className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                            />
                           ))}
                         </div>
                       </div>
                       <p className="text-muted-foreground mb-2">
-                        "Professional and reliable. The CI/CD pipeline implementation was flawless and delivery was on time."
+                        "Professional and reliable. The CI/CD pipeline
+                        implementation was flawless and delivery was on time."
                       </p>
-                      <p className="font-semibold text-sm">- Anonymous Client</p>
+                      <p className="font-semibold text-sm">
+                        - Anonymous Client
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -572,13 +715,17 @@ export default function Index() {
 
             {/* Availability */}
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-8">Current Availability</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-8">
+                Current Availability
+              </h3>
               <Card className="p-6 mb-6">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-foreground font-semibold">Status</span>
                   <div className="flex items-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                    <span className="text-green-600 font-semibold">Available</span>
+                    <span className="text-green-600 font-semibold">
+                      Available
+                    </span>
                   </div>
                 </div>
                 <Separator className="my-4" />
@@ -613,9 +760,12 @@ export default function Index() {
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Get In Touch</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Get In Touch
+            </h2>
             <p className="text-xl text-muted-foreground">
-              Ready to start your next cloud project? Let's discuss how I can help.
+              Ready to start your next cloud project? Let's discuss how I can
+              help.
             </p>
           </div>
 
@@ -682,7 +832,11 @@ export default function Index() {
                   />
                 </div>
 
-                <Button type="submit" disabled={isSubmitting} className="w-full">
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full"
+                >
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
@@ -698,7 +852,9 @@ export default function Index() {
 
                 {submitMessage && (
                   <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
-                    <p className="text-green-800 dark:text-green-200">{submitMessage}</p>
+                    <p className="text-green-800 dark:text-green-200">
+                      {submitMessage}
+                    </p>
                   </div>
                 )}
               </form>
@@ -715,7 +871,10 @@ export default function Index() {
                     </div>
                     <div>
                       <p className="font-semibold">Email</p>
-                      <a href="mailto:roninshivam2001@gmail.com" className="text-blue-600 hover:underline">
+                      <a
+                        href="mailto:roninshivam2001@gmail.com"
+                        className="text-blue-600 hover:underline"
+                      >
                         roninshivam2001@gmail.com
                       </a>
                     </div>
@@ -729,7 +888,10 @@ export default function Index() {
                     </div>
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <a href="tel:+918757808001" className="text-green-600 hover:underline">
+                      <a
+                        href="tel:+918757808001"
+                        className="text-green-600 hover:underline"
+                      >
                         +91 8757808001
                       </a>
                     </div>
@@ -743,7 +905,9 @@ export default function Index() {
                     </div>
                     <div>
                       <p className="font-semibold">Location</p>
-                      <p className="text-muted-foreground">Patna, Bihar - 800007, India</p>
+                      <p className="text-muted-foreground">
+                        Patna, Bihar - 800007, India
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -752,13 +916,21 @@ export default function Index() {
                   <h4 className="font-semibold mb-4">Follow Me</h4>
                   <div className="flex space-x-4">
                     <Button size="lg" asChild>
-                      <a href="https://www.linkedin.com/in/shivam-singh8757" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://www.linkedin.com/in/shivam-singh8757"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Linkedin className="w-5 h-5 mr-2" />
                         LinkedIn
                       </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild>
-                      <a href="https://github.com/shivamsinghtech" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://github.com/shivamsinghtech"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="w-5 h-5 mr-2" />
                         GitHub
                       </a>
@@ -777,15 +949,31 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Shivam Singh</h3>
-              <p className="text-slate-400 mb-4">Cloud Developer specializing in AWS, Azure, and DevOps automation.</p>
+              <p className="text-slate-400 mb-4">
+                Cloud Developer specializing in AWS, Azure, and DevOps
+                automation.
+              </p>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/in/shivam-singh8757" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white">
+                <a
+                  href="https://www.linkedin.com/in/shivam-singh8757"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://github.com/shivamsinghtech" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white">
+                <a
+                  href="https://github.com/shivamsinghtech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white"
+                >
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="mailto:roninshivam2001@gmail.com" className="text-slate-400 hover:text-white">
+                <a
+                  href="mailto:roninshivam2001@gmail.com"
+                  className="text-slate-400 hover:text-white"
+                >
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
@@ -818,7 +1006,9 @@ export default function Index() {
 
           <div className="text-center">
             <p className="text-slate-400">
-              © 2024 Shivam Singh. Built with React, TypeScript, Tailwind CSS, and Three.js. Made with <Heart className="w-4 h-4 inline text-red-500" /> in India.
+              © 2024 Shivam Singh. Built with React, TypeScript, Tailwind CSS,
+              and Three.js. Made with{" "}
+              <Heart className="w-4 h-4 inline text-red-500" /> in India.
             </p>
           </div>
         </div>
