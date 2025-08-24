@@ -218,68 +218,202 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About & Skills Section */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">About Me</h2>
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I am a passionate Cloud and DevOps Enthusiast with hands-on experience in deploying and managing applications on AWS and Azure cloud platforms. My expertise includes designing and automating CI/CD pipelines for efficient software delivery using tools like Docker and scripting in Linux environments.
-              </p>
-              <br />
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I am proficient in containerization, infrastructure automation, and cloud-based deployments with experience in supporting production systems, troubleshooting cloud-based services, and ensuring high availability in Agile-driven environments.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Technical Skills</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
-            {Object.entries(skills).map(([category, skillList]) => (
-              <Card key={category}>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    {category === "Cloud & DevOps" && <Cloud className="w-5 h-5 mr-2 text-blue-600" />}
-                    {category === "Programming" && <Code className="w-5 h-5 mr-2 text-green-600" />}
-                    {category === "Networking" && <Server className="w-5 h-5 mr-2 text-purple-600" />}
-                    {category === "File Management" && <Database className="w-5 h-5 mr-2 text-orange-600" />}
-                    {category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill) => (
-                      <Badge key={skill} variant="secondary">
-                        {skill}
-                      </Badge>
-                    ))}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* About Section - Left Side */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl font-bold text-foreground mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  About Me
+                </h2>
+                <div className="space-y-6">
+                  <div className="relative">
+                    <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
+                    <div className="pl-6">
+                      <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                        <Zap className="w-5 h-5 mr-2 text-blue-500" />
+                        Cloud Developer & DevOps Engineer
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Passionate Cloud and DevOps Enthusiast with hands-on experience in deploying and managing applications on AWS and Azure cloud platforms. I specialize in designing and automating CI/CD pipelines for efficient software delivery using cutting-edge tools like Docker and Linux environments.
+                      </p>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          {/* Soft Skills */}
-          <Card className="max-w-2xl mx-auto">
-            <CardHeader>
-              <CardTitle>Soft Skills</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {softSkills.map((skill) => (
-                  <Badge key={skill} variant="outline">
-                    {skill}
-                  </Badge>
-                ))}
+
+                  <div className="relative">
+                    <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-purple-500 to-green-600 rounded-full"></div>
+                    <div className="pl-6">
+                      <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                        <Award className="w-5 h-5 mr-2 text-purple-500" />
+                        Education & Expertise
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        B.Tech graduate in Computer Science & Engineering with deep expertise in containerization, infrastructure automation, and cloud-native deployments. Experienced in supporting production systems, troubleshooting cloud-based services, and ensuring high availability in Agile-driven environments.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-green-500 to-blue-600 rounded-full"></div>
+                    <div className="pl-6">
+                      <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                        <Heart className="w-5 h-5 mr-2 text-green-500" />
+                        Mission & Vision
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Committed to helping businesses scale efficiently through innovative cloud solutions and automation. I believe in building robust, secure, and cost-effective infrastructure that enables organizations to focus on their core business goals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Technical Skills - Right Side */}
+            <div>
+              <h2 className="text-4xl font-bold text-foreground mb-8 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Technical Skills
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {/* Cloud & DevOps Skills */}
+                <div className="col-span-2 sm:col-span-3 mb-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                    <Cloud className="w-5 h-5 mr-2 text-blue-500" />
+                    Cloud & DevOps
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">AWS</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">AWS EC2, S3</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">AZ</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Azure</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">🐳</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Docker & CI/CD</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-800/20 p-4 border border-yellow-200 dark:border-yellow-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">FB</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Firebase</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Programming Skills */}
+                <div className="col-span-2 sm:col-span-3 mb-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                    <Code className="w-5 h-5 mr-2 text-green-500" />
+                    Programming & Databases
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 border border-green-200 dark:border-green-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-blue-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">🐍</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Python</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 border border-green-200 dark:border-green-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">DB</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">MongoDB</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 p-4 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 col-span-2">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-black rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">🐧</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Linux Commands & Server Operations</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Networking & Tools */}
+                <div className="col-span-2 sm:col-span-3 mb-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                    <Server className="w-5 h-5 mr-2 text-purple-500" />
+                    Networking & Tools
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 border border-purple-200 dark:border-purple-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">PT</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Cisco Packet Tracer</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 border border-purple-200 dark:border-purple-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">📡</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Network Config</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-4 border border-orange-200 dark:border-orange-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">📬</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">Postman API</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-4 border border-orange-200 dark:border-orange-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-green-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">📁</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">FileZilla FTP</span>
+                      </div>
+                    </div>
+
+                    <div className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 p-4 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 col-span-2">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">🔐</span>
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">PuTTY SSH Access</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -335,46 +469,22 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Education & Certifications */}
+      {/* Certifications */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Education */}
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">Education</h2>
-              <div className="space-y-6">
-                {education.map((edu, index) => (
-                  <Card key={index}>
-                    <CardHeader>
-                      <CardTitle className="text-lg">{edu.degree}</CardTitle>
-                      <CardDescription>{edu.institution}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground flex items-center">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {edu.duration}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Certifications */}
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">Certifications</h2>
-              <div className="space-y-4">
-                {certifications.map((cert, index) => (
-                  <Card key={index}>
-                    <CardContent className="p-6">
-                      <p className="flex items-center text-foreground">
-                        <Award className="w-5 h-5 mr-3 text-yellow-600" />
-                        {cert}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-foreground mb-12">Professional Certifications</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {certifications.map((cert, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <CardContent className="p-6">
+                    <p className="flex items-center text-foreground">
+                      <Award className="w-5 h-5 mr-3 text-yellow-600" />
+                      {cert}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
