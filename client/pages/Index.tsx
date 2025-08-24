@@ -155,56 +155,44 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[80vh]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
-            {/* Left Side - Essential Info */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F2d871d7251d8403996debf058453a0d1%2F189894b8149f4cb09f9c6e1505ecbb8e?format=webp&width=800"
-                alt="Shivam Singh"
-                className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-700 shadow-2xl object-cover"
-              />
+        <div className="max-w-4xl mx-auto flex items-center justify-center h-full">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F2d871d7251d8403996debf058453a0d1%2F189894b8149f4cb09f9c6e1505ecbb8e?format=webp&width=800"
+              alt="Shivam Singh"
+              className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-700 shadow-2xl object-cover"
+            />
 
-              <div className="space-y-4">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground">
-                  Shivam Singh
-                </h1>
-                <p className="text-2xl sm:text-3xl text-primary font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Cloud Developer
-                </p>
-              </div>
-
-              <div className="flex gap-6">
-                <a
-                  href="https://www.linkedin.com/in/shivam-singh8757"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
-                >
-                  <Linkedin className="w-6 h-6" />
-                  <span className="sr-only">LinkedIn Profile</span>
-                </a>
-
-                <a
-                  href="mailto:roninshivam2001@gmail.com"
-                  className="group relative overflow-hidden rounded-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
-                >
-                  <Mail className="w-6 h-6" />
-                  <span className="sr-only">Email Contact</span>
-                </a>
-              </div>
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground">
+                Shivam Singh
+              </h1>
+              <p className="text-2xl sm:text-3xl text-primary font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Cloud Developer
+              </p>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Transforming businesses through scalable cloud solutions and automated DevOps workflows
+              </p>
             </div>
 
-            {/* Right Side - Placeholder for balance */}
-            <div className="hidden lg:flex items-center justify-center">
-              <div className="text-center space-y-6 opacity-50">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center">
-                  <Cloud className="w-24 h-24 text-blue-500" />
-                </div>
-                <p className="text-lg text-muted-foreground">
-                  Building Cloud Solutions
-                </p>
-              </div>
+            <div className="flex gap-6">
+              <a
+                href="https://www.linkedin.com/in/shivam-singh8757"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+              >
+                <Linkedin className="w-6 h-6" />
+                <span className="sr-only">LinkedIn Profile</span>
+              </a>
+
+              <a
+                href="mailto:roninshivam2001@gmail.com"
+                className="group relative overflow-hidden rounded-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+              >
+                <Mail className="w-6 h-6" />
+                <span className="sr-only">Email Contact</span>
+              </a>
             </div>
           </div>
         </div>
