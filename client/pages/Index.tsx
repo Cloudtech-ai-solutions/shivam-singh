@@ -154,30 +154,22 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[100vh] flex items-center">
-        {/* 3D Background - Full Coverage */}
-        <div className="absolute inset-0 w-full h-full">
-          <CloudScene3D />
-        </div>
-
-        {/* Background Overlay for Better Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent dark:from-background/95 dark:via-background/70 dark:to-transparent"></div>
-
-        {/* Content Layer */}
-        <div className="relative z-10 w-full pt-20 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-2xl">
+      <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[80vh]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
+            {/* Left Side - Essential Info */}
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F2d871d7251d8403996debf058453a0d1%2F189894b8149f4cb09f9c6e1505ecbb8e?format=webp&width=800"
                 alt="Shivam Singh"
-                className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-300 shadow-2xl object-cover backdrop-blur-sm bg-white/10"
+                className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-700 shadow-2xl object-cover"
               />
 
               <div className="space-y-4">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground drop-shadow-lg">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground">
                   Shivam Singh
                 </h1>
-                <p className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm">
+                <p className="text-2xl sm:text-3xl text-primary font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Cloud Developer
                 </p>
               </div>
@@ -187,7 +179,7 @@ export default function Index() {
                   href="https://www.linkedin.com/in/shivam-singh8757"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-full bg-blue-600/90 hover:bg-blue-700 backdrop-blur-sm text-white p-4 transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-blue-500/25"
+                  className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
                 >
                   <Linkedin className="w-6 h-6" />
                   <span className="sr-only">LinkedIn Profile</span>
@@ -195,21 +187,37 @@ export default function Index() {
 
                 <a
                   href="mailto:roninshivam2001@gmail.com"
-                  className="group relative overflow-hidden rounded-full bg-gray-600/90 hover:bg-gray-700 backdrop-blur-sm text-white p-4 transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-gray-500/25"
+                  className="group relative overflow-hidden rounded-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
                 >
                   <Mail className="w-6 h-6" />
                   <span className="sr-only">Email Contact</span>
                 </a>
               </div>
+            </div>
 
-              {/* Subtle indicator for 3D background */}
-              <div className="hidden lg:block mt-12">
-                <p className="text-sm text-muted-foreground/80 bg-background/20 backdrop-blur-sm rounded-lg px-3 py-1 border border-border/30">
-                  ✨ Interactive 3D Cloud Architecture Background
+            {/* Right Side - Placeholder for balance */}
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="text-center space-y-6 opacity-50">
+                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center">
+                  <Cloud className="w-24 h-24 text-blue-500" />
+                </div>
+                <p className="text-lg text-muted-foreground">
+                  Building Cloud Solutions
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 3D Cloud Visualization Section */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Interactive Cloud Architecture</h2>
+            <p className="text-muted-foreground">Experience cloud infrastructure in 3D - drag to explore</p>
+          </div>
+          <CloudScene3D />
         </div>
       </section>
 
