@@ -2,12 +2,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
-  Phone, 
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { CloudScene3D } from "@/components/CloudScene3D";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
   Download,
   ExternalLink,
   Cloud,
@@ -15,8 +20,16 @@ import {
   Database,
   Code,
   Award,
-  Calendar
+  Calendar,
+  Send,
+  Users,
+  Briefcase,
+  MessageSquare,
+  Heart,
+  Star,
+  Zap
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Index() {
   const skills = {
@@ -78,13 +91,13 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-background to-background/50">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+      <nav className="bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-slate-900">Shivam Singh</div>
-            <div className="flex space-x-4">
+            <div className="text-xl font-bold text-foreground">Shivam Singh</div>
+            <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm" asChild>
                 <a href="#about">About</a>
               </Button>
@@ -100,37 +113,41 @@ export default function Index() {
               <Button variant="ghost" size="sm" asChild>
                 <a href="#contact">Contact</a>
               </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <a href="#collaborate">Collaborate</a>
+              </Button>
+              <ThemeToggle />
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
-            <img 
+            <img
               src="https://cdn.builder.io/api/v1/image/assets%2F2d871d7251d8403996debf058453a0d1%2F189894b8149f4cb09f9c6e1505ecbb8e?format=webp&width=800"
               alt="Shivam Singh"
-              className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover"
+              className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-lg object-cover"
             />
-            <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-4">
+            <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-4">
               Shivam Singh
             </h1>
-            <p className="text-2xl text-blue-600 font-semibold mb-6">Cloud Developer</p>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
+            <p className="text-2xl text-primary font-semibold mb-6">Cloud Developer</p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               Cloud and DevOps Enthusiast with hands-on experience in deploying and managing applications on AWS and Azure cloud platforms. Skilled in designing and automating CI/CD pipelines for efficient software delivery using tools like Docker and scripting in Linux environments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <div className="flex items-center text-slate-600">
+              <div className="flex items-center text-muted-foreground">
                 <MapPin className="w-4 h-4 mr-2" />
                 Patna, Bihar - 800007
               </div>
-              <div className="flex items-center text-slate-600">
+              <div className="flex items-center text-muted-foreground">
                 <Phone className="w-4 h-4 mr-2" />
                 8757808001
               </div>
-              <div className="flex items-center text-slate-600">
+              <div className="flex items-center text-muted-foreground">
                 <Mail className="w-4 h-4 mr-2" />
                 roninshivam2001@gmail.com
               </div>
@@ -159,17 +176,28 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* 3D Cloud Scene */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">About Me</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Cloud Infrastructure Visualization</h2>
+            <p className="text-muted-foreground">Interactive 3D representation of cloud architecture</p>
+          </div>
+          <CloudScene3D />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">About Me</h2>
           <Card className="max-w-4xl mx-auto">
             <CardContent className="p-8">
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 I am a passionate Cloud and DevOps Enthusiast with hands-on experience in deploying and managing applications on AWS and Azure cloud platforms. My expertise includes designing and automating CI/CD pipelines for efficient software delivery using tools like Docker and scripting in Linux environments.
               </p>
               <br />
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 I am proficient in containerization, infrastructure automation, and cloud-based deployments with experience in supporting production systems, troubleshooting cloud-based services, and ensuring high availability in Agile-driven environments.
               </p>
             </CardContent>
@@ -180,7 +208,7 @@ export default function Index() {
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Technical Skills</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
             {Object.entries(skills).map(([category, skillList]) => (
               <Card key={category}>
@@ -225,9 +253,9 @@ export default function Index() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Professional Experience</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Professional Experience</h2>
           <div className="max-w-4xl mx-auto">
             {experiences.map((exp, index) => (
               <Card key={index} className="mb-6">
@@ -239,7 +267,7 @@ export default function Index() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600">{exp.description}</p>
+                  <p className="text-muted-foreground">{exp.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -250,7 +278,7 @@ export default function Index() {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="h-full">
@@ -261,7 +289,7 @@ export default function Index() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1">
-                  <p className="text-slate-600 mb-4">{project.description}</p>
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="outline">
@@ -277,12 +305,12 @@ export default function Index() {
       </section>
 
       {/* Education & Certifications */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Education */}
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-8">Education</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Education</h2>
               <div className="space-y-6">
                 {education.map((edu, index) => (
                   <Card key={index}>
@@ -291,7 +319,7 @@ export default function Index() {
                       <CardDescription>{edu.institution}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-600 flex items-center">
+                      <p className="text-muted-foreground flex items-center">
                         <Calendar className="w-4 h-4 mr-2" />
                         {edu.duration}
                       </p>
@@ -303,12 +331,12 @@ export default function Index() {
 
             {/* Certifications */}
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-8">Certifications</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Certifications</h2>
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
                   <Card key={index}>
                     <CardContent className="p-6">
-                      <p className="flex items-center text-slate-700">
+                      <p className="flex items-center text-foreground">
                         <Award className="w-5 h-5 mr-3 text-yellow-600" />
                         {cert}
                       </p>
