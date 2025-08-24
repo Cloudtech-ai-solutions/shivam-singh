@@ -154,67 +154,58 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-8">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F2d871d7251d8403996debf058453a0d1%2F189894b8149f4cb09f9c6e1505ecbb8e?format=webp&width=800"
-              alt="Shivam Singh"
-              className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-lg object-cover"
-            />
-            <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-4">
-              Shivam Singh
-            </h1>
-            <p className="text-2xl text-primary font-semibold mb-6">Cloud Developer</p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Cloud and DevOps Enthusiast with hands-on experience in deploying and managing applications on AWS and Azure cloud platforms. Skilled in designing and automating CI/CD pipelines for efficient software delivery using tools like Docker and scripting in Linux environments.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <div className="flex items-center text-muted-foreground">
-                <MapPin className="w-4 h-4 mr-2" />
-                Patna, Bihar - 800007
-              </div>
-              <div className="flex items-center text-muted-foreground">
-                <Phone className="w-4 h-4 mr-2" />
-                8757808001
-              </div>
-              <div className="flex items-center text-muted-foreground">
-                <Mail className="w-4 h-4 mr-2" />
-                roninshivam2001@gmail.com
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild>
-                <a href="https://www.linkedin.com/in/shivam-singh8757" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="https://github.com/shivamsinghtech" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="mailto:roninshivam2001@gmail.com">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Email Me
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[80vh]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
+            {/* Left Side - Essential Info */}
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F2d871d7251d8403996debf058453a0d1%2F189894b8149f4cb09f9c6e1505ecbb8e?format=webp&width=800"
+                alt="Shivam Singh"
+                className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-700 shadow-2xl object-cover"
+              />
 
-      {/* 3D Cloud Scene */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Cloud Infrastructure Visualization</h2>
-            <p className="text-muted-foreground">Interactive 3D representation of cloud architecture</p>
+              <div className="space-y-4">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground">
+                  Shivam Singh
+                </h1>
+                <p className="text-2xl sm:text-3xl text-primary font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Cloud Developer
+                </p>
+              </div>
+
+              <div className="flex gap-6">
+                <a
+                  href="https://www.linkedin.com/in/shivam-singh8757"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+                >
+                  <Linkedin className="w-6 h-6" />
+                  <span className="sr-only">LinkedIn Profile</span>
+                </a>
+
+                <a
+                  href="mailto:roninshivam2001@gmail.com"
+                  className="group relative overflow-hidden rounded-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white p-4 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+                >
+                  <Mail className="w-6 h-6" />
+                  <span className="sr-only">Email Contact</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Side - 3D Visualization */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl"></div>
+              <CloudScene3D />
+              <div className="absolute bottom-4 left-4 right-4 text-center">
+                <p className="text-sm text-muted-foreground bg-background/80 backdrop-blur-sm rounded-lg px-3 py-1 inline-block">
+                  Interactive 3D Cloud Architecture
+                </p>
+              </div>
+            </div>
           </div>
-          <CloudScene3D />
         </div>
       </section>
 
