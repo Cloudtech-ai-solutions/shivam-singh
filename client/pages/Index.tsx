@@ -32,6 +32,37 @@ import {
 import { useState } from "react";
 
 export default function Index() {
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+    projectType: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitMessage('Thank you for your message! I\'ll get back to you soon.');
+      setContactForm({ name: '', email: '', message: '', projectType: '' });
+
+      setTimeout(() => {
+        setSubmitMessage('');
+      }, 5000);
+    }, 1000);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({ ...prev, [name]: value }));
+  };
+
   const skills = {
     "Cloud & DevOps": ["AWS EC2, S3", "Microsoft Azure", "Docker & CI/CD Pipelines", "Firebase"],
     "Programming": ["Python", "MongoDB", "Linux (Basic Commands & Server Operations)"],
