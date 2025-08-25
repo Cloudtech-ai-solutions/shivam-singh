@@ -1006,8 +1006,7 @@ export default function Index() {
 
           <div className="text-center">
             <p className="text-slate-400">
-              © 2024 Shivam Singh. Built with React, TypeScript, Tailwind CSS,
-              and Three.js. Made with{" "}
+              © 2025 Shivam Singh.  Made with{" "}
               <Heart className="w-4 h-4 inline text-red-500" /> in India.
             </p>
           </div>
